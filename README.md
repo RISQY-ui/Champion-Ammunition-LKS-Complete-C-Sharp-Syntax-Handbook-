@@ -1,196 +1,357 @@
-# Amunisi-Juara-LKS-Complete-C-Syntax-Handbook
+# Complete C# Syntax Handbook - LKS Competition Ammunition for Faris
+
 ---
-# Syntax C# Lengkap - Amunisi LKS Game Faris
 
-## 📋 Daftar Isi
+## 📋 Table of Contents
 
-- [1. Variabel & Tipe Data](#1-variabel--tipe-data)
-- [2. Deklarasi Variabel](#2-deklarasi-variabel)
-- [3. Konversi Tipe Data (Casting)](#3-konversi-tipe-data-casting)
-- [4. Operator](#4-operator)
-- [5. Percabangan (IF, ELSE, SWITCH)](#5-percabangan-if-else-switch)
-- [6. Perulangan (Looping)](#6-perulangan-looping)
-- [7. Array](#7-array)
+- [1. Variables & Data Types](#1-variables--data-types)
+- [2. Variable Declaration](#2-variable-declaration)
+- [3. Type Casting (Data Conversion)](#3-type-casting-data-conversion)
+- [4. Operators](#4-operators)
+- [5. Conditional Statements (IF, ELSE, SWITCH)](#5-conditional-statements-if-else-switch)
+- [6. Looping (For, While, Foreach)](#6-looping-for-while-foreach)
+- [7. Arrays](#7-arrays)
 - [8. List (Dynamic Array)](#8-list-dynamic-array)
-- [9. Dictionary](#9-dictionary)
-- [10. String Operation](#10-string-operation)
-- [11. Random Number](#11-random-number)
-- [12. Method (Fungsi)](#12-method-fungsi)
-- [13. Class & Object](#13-class--object)
+- [9. Dictionary (Key-Value)](#9-dictionary-key-value)
+- [10. String Operations](#10-string-operations)
+- [11. Random Numbers](#11-random-numbers)
+- [12. Methods (Functions)](#12-methods-functions)
+- [13. Classes & Objects](#13-classes--objects)
 - [14. Exception Handling (Try-Catch)](#14-exception-handling-try-catch)
-- [15. Enum (Data Tetap)](#15-enum-data-tetap)
-- [16. DateTime (Tanggal & Waktu)](#16-datetime-tanggal--waktu)
-- [17. File I/O (Baca Tulis File)](#17-file-io-baca-tulis-file)
-- [18. Koneksi Database SQL Server](#18-koneksi-database-sql-server)
-- [19. Ringkasan Cepat](#19-ringkasan-cepat)
+- [15. Enum (Constant Data)](#15-enum-constant-data)
+- [16. DateTime (Date & Time)](#16-datetime-date--time)
+- [17. File I/O (Read & Write Files)](#17-file-io-read--write-files)
+- [18. SQL Server Database Connection](#18-sql-server-database-connection)
+- [19. Quick Reference Summary](#19-quick-reference-summary)
 
 ---
 
-## 1. Variabel & Tipe Data
+## 1. Variables & Data Types
 
-| Tipe Data | Keyword | Range / Ukuran | Contoh |
-|-----------|---------|----------------|--------|
-| Bilangan bulat | `int` | -2M s/d 2M | `int level = 5;` |
-| Bilangan bulat (positif) | `uint` | 0 s/d 4M | `uint score = 1000;` |
-| Bilangan bulat kecil | `byte` | 0 s/d 255 | `byte exp = 50;` |
-| Bilangan bulat pendek | `short` | -32.768 s/d 32.767 | `short lives = 3;` |
-| Bilangan bulat panjang | `long` | sangat besar | `long gold = 9999999;` |
-| Desimal (presisi rendah) | `float` | 6-7 digit | `float speed = 5.5f;` |
-| Desimal (presisi tinggi) | `double` | 15-16 digit | `double damage = 99.9;` |
-| Desimal (keuangan) | `decimal` | 28-29 digit | `decimal price = 10000m;` |
-| Teks | `string` | 2GB maksimal | `string name = "Faris";` |
-| Satu karakter | `char` | satu huruf | `char grade = 'A';` |
-| Boolean (true/false) | `bool` | true atau false | `bool isAlive = true;` |
-| Tanggal & waktu | `DateTime` | tahun 1-9999 | `DateTime now = DateTime.Now;` |
+| Data Type | Keyword | Range / Size | Example |
+|-----------|---------|--------------|---------|
+| Integer (whole number) | `int` | -2M to 2M | `int level = 5;` |
+| Unsigned Integer (positive only) | `uint` | 0 to 4M | `uint score = 1000;` |
+| Byte (very small) | `byte` | 0 to 255 | `byte exp = 50;` |
+| Short Integer | `short` | -32,768 to 32,767 | `short lives = 3;` |
+| Long Integer (very large) | `long` | very large | `long gold = 9999999;` |
+| Decimal (single precision) | `float` | 6-7 digits | `float speed = 5.5f;` |
+| Decimal (double precision) | `double` | 15-16 digits | `double damage = 99.9;` |
+| Decimal (financial/precise) | `decimal` | 28-29 digits | `decimal price = 10000m;` |
+| Text / String | `string` | up to 2GB | `string name = "Faris";` |
+| Single Character | `char` | one letter | `char grade = 'A';` |
+| Boolean (true/false) | `bool` | true or false | `bool isAlive = true;` |
+| Date & Time | `DateTime` | year 1-9999 | `DateTime now = DateTime.Now;` |
 
-### Contoh Kode
+### Code Examples
 
 ```csharp
 int playerLevel = 10;
 float playerSpeed = 5.5f;
 double playerDamage = 99.9;
-string playerName = "Faris Ganteng";
+string playerName = "Faris The Legend";
 bool isAlive = true;
-DateTime startGame = DateTime.Now;
+DateTime gameStartTime = DateTime.Now;
+decimal totalGold = 50000.50m;
 ```
 
 ---
 
-2. Deklarasi Variabel
+## 2. Variable Declaration
+
+### Method 1: Declare Then Assign
 
 ```csharp
-// ======= CARA 1: Deklarasi lalu isi =======
 int experience;
 experience = 100;
+```
 
-// ======= CARA 2: Langsung isi =======
+### Method 2: Declare and Assign Immediately
+
+```csharp
 int health = 100;
 string playerName = "Faris";
+```
 
-// ======= CARA 3: Multiple variabel =======
+### Method 3: Multiple Variables at Once
+
+```csharp
 int x = 10, y = 20, z = 30;
-string a = "A", b = "B", c = "C";
+string firstName = "Faris", lastName = "The Gamer";
+```
 
-// ======= CARA 4: Var (tipe data otomatis) =======
-var level = 5;           // otomatis jadi int
-var title = "Hero";       // otomatis jadi string
-var isWin = true;         // otomatis jadi bool
+### Method 4: Using var (Automatic Type Inference)
 
-// ======= CARA 5: Konstanta (nilai tetap) =======
+```csharp
+var level = 5;              // automatically int
+var title = "Hero";          // automatically string
+var isWin = true;            // automatically bool
+var salary = 50000.50m;      // automatically decimal
+```
+
+### Method 5: Constants (Fixed Values)
+
+```csharp
 const float GRAVITY = 9.8f;
 const int MAX_LEVEL = 100;
-const string GAME_NAME = "Adventure Game";
+const string GAME_NAME = "Epic Adventure";
+const decimal PLAYER_STARTING_GOLD = 1000m;
+```
 
-// ======= CARA 6: Nullable (bisa kosong) =======
-int? playerScore = null;
-string? middleName = null;
+### Method 6: Nullable Types (Can Be Null)
+
+```csharp
+int? playerScore = null;        // can be null
+string? middleName = null;      // can be null
+double? optionalHealth = null;  // can be null
+
+// Checking nullable
+if (playerScore.HasValue)
+{
+    Console.WriteLine($"Score: {playerScore.Value}");
+}
+
+// Using null coalescing operator
+int actualScore = playerScore ?? 0;  // 0 if null
 ```
 
 ---
 
-3. Konversi Tipe Data (Casting)
+## 3. Type Casting (Data Conversion)
+
+### String to Number (IMPORTANT FOR INPUT)
 
 ```csharp
-// ======= DARI STRING KE ANGKA (PENTING UNTUK INPUT) =======
-string inputDariTextBox = "100";
-int damage = Convert.ToInt32(inputDariTextBox);
-long bigNumber = Convert.ToInt64(inputDariTextBox);
+string inputFromTextBox = "100";
+
+// Using Convert class
+int damage = Convert.ToInt32(inputFromTextBox);
+long bigNumber = Convert.ToInt64(inputFromTextBox);
 float speed = Convert.ToSingle("5.5");
-double damageD = Convert.ToDouble("99.9");
+double damageDouble = Convert.ToDouble("99.9");
 decimal price = Convert.ToDecimal("10000");
+bool success = Convert.ToBoolean("true");
 
-// ======= DARI ANGKA KE STRING =======
-int level = 10;
-string levelText = level.ToString();
-string healthText = health.ToString();
-
-// ======= CASTING PAKSA =======
-float a = 10.5f;
-int b = (int)a;           // b = 10 (desimal ilang)
-double c = (double)a;      // c = 10.5
-
-// ======= PARSE (Alternatif Convert) =======
+// Using Parse method
 int number = int.Parse("123");
 float numberFloat = float.Parse("12.34");
+bool isActive = bool.Parse("true");
+```
 
-// ======= TRY PARSE (Aman - Tidak Error) =======
+### Number to String
+
+```csharp
+int level = 10;
+double health = 75.5;
+
+string levelText = level.ToString();           // "10"
+string healthText = health.ToString();         // "75.5"
+string hexNumber = 255.ToString("X");          // "FF"
+string currencyText = 1000.ToString("C");      // "$1,000.00"
+```
+
+### Forced Casting
+
+```csharp
+float a = 10.5f;
+int b = (int)a;         // b = 10 (decimal lost)
+
+double c = 99.9;
+int d = (int)c;         // d = 99
+
+long largeNum = 999999999;
+int smallNum = (int)largeNum;  // potential overflow
+```
+
+### Safe Parsing (TryParse - Won't Throw Error)
+
+```csharp
 string input = "abc123";
+
+// Safe way - won't crash
 bool success = int.TryParse(input, out int result);
-// success = false, result = 0 (tidak error)
-```
-
----
-
-4. Operator
-
-Aritmatika
-
-Operator Fungsi Contoh
-+ Penjumlahan int c = a + b;
-- Pengurangan int c = a - b;
-* Perkalian int c = a * b;
-/ Pembagian int c = a / b;
-% Modulus (sisa bagi) int sisa = 10 % 3; // 1
-
-Increment & Decrement
-
-```csharp
-int score = 0;
-score++;        // score = 1 (tambah 1)
-score--;        // score = 0 (kurang 1)
-score += 5;     // score = 5 (tambah 5)
-score -= 2;     // score = 3 (kurang 2)
-score *= 2;     // score = 6 (kali 2)
-score /= 3;     // score = 2 (bagi 3)
-```
-
-Perbandingan (Hasil bool)
-
-Operator Fungsi Contoh
-== Sama dengan if (a == b)
-!= Tidak sama if (a != b)
-> Lebih besar if (a > b)
-< Lebih kecil if (a < b)
->= Lebih besar sama dengan if (a >= b)
-<= Lebih kecil sama dengan if (a <= b)
-
-Logika (Boolean)
-
-Operator Fungsi Contoh
-&& AND (keduanya true) if (a > 0 && b > 0)
-`  `
-! NOT (kebalikan) if (!isDead)
-
----
-
-5. Percabangan (IF, ELSE, SWITCH)
-
-IF Sederhana
-
-```csharp
-if (health <= 0)
+if (success)
 {
-    isAlive = false;
-    MessageBox.Show("Game Over!");
-}
-```
-
-IF-ELSE
-
-```csharp
-if (score >= 100)
-{
-    MessageBox.Show("You Win!");
+    Console.WriteLine($"Number: {result}");
 }
 else
 {
-    MessageBox.Show("Try Again!");
+    Console.WriteLine("Invalid input!");
+    // result = 0 (default value)
+}
+
+// More examples
+if (double.TryParse("99.99", out double value))
+{
+    Console.WriteLine($"Value: {value}");
+}
+
+if (bool.TryParse("true", out bool active))
+{
+    Console.WriteLine($"Active: {active}");
 }
 ```
 
-IF-ELSE IF (Banyak Kondisi)
+---
+
+## 4. Operators
+
+### Arithmetic Operators
+
+| Operator | Function | Example | Result |
+|----------|----------|---------|--------|
+| `+` | Addition | `10 + 5` | 15 |
+| `-` | Subtraction | `10 - 3` | 7 |
+| `*` | Multiplication | `4 * 5` | 20 |
+| `/` | Division | `20 / 4` | 5 |
+| `%` | Modulo (remainder) | `10 % 3` | 1 |
 
 ```csharp
+int baseDamage = 20;
+int enemyDefense = 5;
+int finalDamage = baseDamage - enemyDefense;  // 15
+
+int totalHealth = 100;
+int damagePerSecond = totalHealth / 10;       // 10 damage/sec
+
+int playerExp = 250;
+int expPerLevel = 100;
+int leftoverExp = playerExp % expPerLevel;    // 50
+```
+
+### Increment & Decrement
+
+```csharp
+int score = 0;
+
+score++;        // score = 1 (increment by 1)
+score--;        // score = 0 (decrement by 1)
+score += 5;     // score = 5 (add 5)
+score -= 2;     // score = 3 (subtract 2)
+score *= 2;     // score = 6 (multiply by 2)
+score /= 3;     // score = 2 (divide by 3)
+score %= 2;     // score = 0 (remainder of division)
+
+// Pre and post increment
+int a = 5;
+int b = a++;    // b = 5, then a = 6 (post-increment)
+int c = ++a;    // a = 7, then c = 7 (pre-increment)
+```
+
+### Comparison Operators (Return bool)
+
+| Operator | Meaning | Example | Result |
+|----------|---------|---------|--------|
+| `==` | Equal to | `5 == 5` | true |
+| `!=` | Not equal to | `5 != 3` | true |
+| `>` | Greater than | `10 > 5` | true |
+| `<` | Less than | `3 < 5` | true |
+| `>=` | Greater or equal | `5 >= 5` | true |
+| `<=` | Less or equal | `3 <= 5` | true |
+
+```csharp
+int playerHealth = 50;
+int maxHealth = 100;
+
+if (playerHealth == maxHealth)
+    Console.WriteLine("Fully healed!");
+
+if (playerHealth < 30)
+    Console.WriteLine("Warning: Low health!");
+
+if (playerHealth >= 50)
+    Console.WriteLine("Healthy!");
+
+bool isDead = playerHealth == 0;
+```
+
+### Logical Operators (Boolean)
+
+| Operator | Meaning | Example |
+|----------|---------|---------|
+| `&&` | AND (both must be true) | `health > 0 && mana > 0` |
+| `\|\|` | OR (at least one must be true) | `isDead \|\| isStunned` |
+| `!` | NOT (reverse the value) | `!isDead` |
+
+```csharp
+int level = 5;
+int exp = 250;
+
+// AND operator - both must be true
+if (level >= 5 && exp >= 200)
+{
+    Console.WriteLine("You can upgrade!");
+}
+
+// OR operator - at least one must be true
+if (isDead || isStunned)
+{
+    Console.WriteLine("Cannot attack!");
+}
+
+// NOT operator - reverses the boolean
+if (!isAlive)
+{
+    Console.WriteLine("Player is dead");
+}
+
+// Complex conditions
+if ((playerHealth > 0 && playerMana > 0) || hasPotion)
+{
+    Console.WriteLine("Can continue fighting!");
+}
+```
+
+### Assignment Operators
+
+```csharp
+int health = 100;
+
+health = 50;        // Simple assignment
+health += 10;       // Equivalent to: health = health + 10
+health -= 5;        // Equivalent to: health = health - 5
+health *= 2;        // Equivalent to: health = health * 2
+health /= 4;        // Equivalent to: health = health / 4
+health %= 3;        // Equivalent to: health = health % 3
+```
+
+---
+
+## 5. Conditional Statements (IF, ELSE, SWITCH)
+
+### Simple IF
+
+```csharp
+int playerHealth = 0;
+
+if (playerHealth <= 0)
+{
+    isAlive = false;
+    MessageBox.Show("Game Over! You died.");
+}
+```
+
+### IF-ELSE
+
+```csharp
+int score = 85;
+
+if (score >= 100)
+{
+    MessageBox.Show("You Win! Perfect score!");
+}
+else
+{
+    MessageBox.Show("Try again! Better luck next time.");
+}
+```
+
+### IF-ELSE IF (Multiple Conditions)
+
+```csharp
+int score = 85;
+string grade;
+
 if (score >= 90)
 {
     grade = "A";
@@ -203,575 +364,914 @@ else if (score >= 70)
 {
     grade = "C";
 }
-else
+else if (score >= 60)
 {
     grade = "D";
 }
+else
+{
+    grade = "F";
+}
+
+Console.WriteLine($"Your grade: {grade}");
 ```
 
-Switch Case
+### Switch Case Statement
 
 ```csharp
+string playerClass = "Warrior";
+
 switch (playerClass)
 {
     case "Warrior":
         health = 150;
         damage = 20;
+        armor = 10;
+        Console.WriteLine("Warrior: High HP and Defense");
         break;
+        
     case "Mage":
         health = 80;
         damage = 35;
+        mana = 100;
+        Console.WriteLine("Mage: High Damage and Mana");
         break;
+        
     case "Archer":
         health = 100;
         damage = 25;
+        speed = 15;
+        Console.WriteLine("Archer: Balanced Stats");
         break;
+        
     default:
         health = 100;
         damage = 15;
+        Console.WriteLine("Unknown class: Default stats assigned");
         break;
 }
 ```
 
-Ternary Operator (Singkat)
+### Switch with Fall-through
 
 ```csharp
-// format: kondisi ? nilai_true : nilai_false
-string status = (health > 0) ? "Hidup" : "Mati";
+int dayOfWeek = 3;
+string dayName = "";
+
+switch (dayOfWeek)
+{
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+    case 4:
+    case 5:
+        dayName = "Weekday";  // Falls through for 3, 4, 5
+        break;
+    case 6:
+    case 7:
+        dayName = "Weekend";  // Falls through for 6, 7
+        break;
+    default:
+        dayName = "Invalid day";
+        break;
+}
+```
+
+### Ternary Operator (Shorthand IF-ELSE)
+
+```csharp
+// Format: condition ? valueIfTrue : valueIfFalse
+
+string status = (health > 0) ? "Alive" : "Dead";
 int bonus = (score > 100) ? 50 : 10;
+string message = (age >= 18) ? "Adult" : "Minor";
+
+// Nested ternary
+string rank = (score >= 90) ? "Excellent" : 
+              (score >= 80) ? "Good" : 
+              (score >= 70) ? "Average" : 
+              "Poor";
 ```
 
 ---
 
-6. Perulangan (Looping)
+## 6. Looping (For, While, Foreach)
 
-For Loop (Tahu jumlahnya)
+### For Loop (When You Know the Count)
 
 ```csharp
-// Looping dari 0 sampai 9
+// Basic for loop from 0 to 9
 for (int i = 0; i < 10; i++)
 {
-    Console.WriteLine("Loop ke-" + i);
+    Console.WriteLine($"Loop iteration: {i}");
 }
 
-// Looping mundur
+// Countdown loop
 for (int i = 10; i > 0; i--)
 {
-    Console.WriteLine("Countdown: " + i);
+    Console.WriteLine($"Countdown: {i}");
 }
 
-// Looping array
-string[] items = { "Sword", "Shield", "Potion" };
-for (int i = 0; i < items.Length; i++)
+// Loop through array
+string[] weapons = { "Sword", "Bow", "Staff", "Dagger" };
+for (int i = 0; i < weapons.Length; i++)
 {
-    Console.WriteLine(items[i]);
+    Console.WriteLine($"{i + 1}. {weapons[i]}");
+}
+
+// Loop with custom increment
+for (int i = 0; i <= 100; i += 10)
+{
+    Console.WriteLine(i);  // 0, 10, 20, 30... 100
+}
+
+// Nested loops (for 2D array or pattern)
+for (int row = 0; row < 3; row++)
+{
+    for (int col = 0; col < 3; col++)
+    {
+        Console.Write($"({row},{col}) ");
+    }
+    Console.WriteLine();
 }
 ```
 
-While Loop (Tidak tahu jumlahnya)
+### While Loop (When Count is Unknown)
 
 ```csharp
 int health = 100;
+
 while (health > 0)
 {
     health -= 10;
-    Console.WriteLine("Health: " + health);
+    Console.WriteLine($"Health: {health}");
+}
+Console.WriteLine("Game Over!");
+
+// While with condition
+int attempts = 0;
+while (attempts < 3)
+{
+    Console.Write("Guess the number: ");
+    int guess = int.Parse(Console.ReadLine());
+    
+    if (guess == 42)
+    {
+        Console.WriteLine("Correct!");
+        break;  // Exit loop
+    }
+    attempts++;
 }
 
-// While dengan kondisi true (infinite sampai break)
+// Infinite loop with break
 bool isRunning = true;
 while (isRunning)
 {
     string input = Console.ReadLine();
-    if (input == "quit")
+    if (input.ToLower() == "quit")
     {
         isRunning = false;
     }
 }
 ```
 
-Do-While Loop (Jalan minimal 1x)
+### Do-While Loop (Executes at Least Once)
 
 ```csharp
-int attempts = 0;
 int password;
+int attempts = 0;
+
 do
 {
-    Console.Write("Masukkan password: ");
-    password = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter password: ");
+    password = int.Parse(Console.ReadLine());
     attempts++;
+    
+    if (password != 12345)
+    {
+        Console.WriteLine("Wrong password! Try again.");
+    }
 } while (password != 12345 && attempts < 3);
+
+if (password == 12345)
+{
+    Console.WriteLine("Access granted!");
+}
+else
+{
+    Console.WriteLine("Too many attempts. Access denied!");
+}
 ```
 
-Foreach Loop (Untuk collection)
+### Foreach Loop (For Collections)
 
 ```csharp
-string[] monsters = { "Goblin", "Orc", "Dragon" };
-foreach (string monster in monsters)
+// Loop through array
+string[] enemies = { "Goblin", "Orc", "Dragon" };
+foreach (string enemy in enemies)
 {
-    Console.WriteLine("Musuh: " + monster);
+    Console.WriteLine($"Enemy: {enemy}");
 }
 
-List<int> scores = new List<int> { 100, 200, 300 };
+// Loop through List
+List<int> scores = new List<int> { 100, 200, 300, 450 };
+int totalScore = 0;
 foreach (int score in scores)
 {
     totalScore += score;
 }
+Console.WriteLine($"Total Score: {totalScore}");
+
+// Loop through Dictionary
+Dictionary<string, int> stats = new Dictionary<string, int>
+{
+    { "Health", 100 },
+    { "Mana", 50 },
+    { "Strength", 20 }
+};
+
+foreach (KeyValuePair<string, int> stat in stats)
+{
+    Console.WriteLine($"{stat.Key}: {stat.Value}");
+}
+
+// Loop with index (C# 7.1+)
+foreach ((string enemy, int index) in enemies.Select((e, i) => (e, i)))
+{
+    Console.WriteLine($"{index + 1}. {enemy}");
+}
 ```
 
-Break & Continue
+### Break and Continue
 
 ```csharp
-// Break: menghentikan loop
+// Break: Stop the loop completely
 for (int i = 0; i < 10; i++)
 {
     if (i == 5)
-        break;  // berhenti di 5
-    Console.WriteLine(i);
+        break;  // Exit loop at i = 5
+    Console.WriteLine(i);  // Prints: 0, 1, 2, 3, 4
 }
 
-// Continue: skip ke iterasi berikutnya
+// Continue: Skip to next iteration
 for (int i = 0; i < 10; i++)
 {
     if (i % 2 == 0)
-        continue;  // skip angka genap
-    Console.WriteLine(i);  // cuma angka ganjil
+        continue;  // Skip even numbers
+    Console.WriteLine(i);  // Prints: 1, 3, 5, 7, 9
+}
+
+// Practical example: Find first enemy
+string[] enemies = { "Slime", "Goblin", "Boss", "Dragon" };
+foreach (string enemy in enemies)
+{
+    if (enemy == "Boss")
+    {
+        Console.WriteLine("Found the Boss!");
+        break;
+    }
+    Console.WriteLine($"Fighting {enemy}...");
 }
 ```
 
 ---
 
-7. Array
+## 7. Arrays
 
-Array Satu Dimensi
+### One-Dimensional Array
 
 ```csharp
-// Cara 1: Langsung isi
-string[] inventory = { "Sword", "Shield", "Potion" };
-int[] scores = { 100, 200, 300 };
+// Method 1: Direct initialization
+string[] inventory = { "Sword", "Shield", "Potion", "Key" };
+int[] levels = { 1, 5, 10, 15, 20 };
+double[] prices = { 99.99, 149.99, 199.99 };
 
-// Cara 2: Tentukan ukuran dulu
-string[] monsters = new string[3];
-monsters[0] = "Goblin";
-monsters[1] = "Orc";
-monsters[2] = "Dragon";
+// Method 2: Define size first
+string[] weapons = new string[5];
+weapons[0] = "Dagger";
+weapons[1] = "Sword";
+weapons[2] = "Bow";
+weapons[3] = "Staff";
+weapons[4] = "Hammer";
 
-// Cara 3: Dengan constructor
-int[] numbers = new int[] { 1, 2, 3, 4, 5 };
+// Method 3: With new keyword
+int[] enemyHealth = new int[] { 50, 100, 150 };
+bool[] bossDefeated = new bool[] { true, false, true };
 
-// Akses array
-string firstItem = inventory[0];     // "Sword"
-string lastItem = inventory[^1];     // "Potion" (index dari belakang)
+// Accessing array elements
+string firstWeapon = weapons[0];      // "Dagger"
+string lastWeapon = weapons[^1];      // "Hammer" (from end)
+string secondLast = weapons[^2];      // "Staff"
 
-// Ubah isi array
-inventory[1] = "Super Shield";
+// Array length
+int arraySize = weapons.Length;       // 5
 
-// Panjang array
-int length = inventory.Length;  // 3
+// Modifying array elements
+weapons[2] = "Crossbow";
 
-// Cari index
-int index = Array.IndexOf(inventory, "Potion");  // 2
+// Finding element position
+int indexOfSword = Array.IndexOf(weapons, "Sword");  // 1
+
+// Copying array
+string[] weaponsCopy = (string[])weapons.Clone();
 ```
 
-Array Dua Dimensi (Papan Game)
+### Two-Dimensional Array (Game Board)
 
 ```csharp
-// Cara 1
-int[,] map = new int[5, 5];
-map[0, 0] = 1;
-map[1, 2] = 3;
-map[4, 4] = 9;
+// Method 1: Initialize with size
+int[,] gameBoard = new int[5, 5];
+gameBoard[0, 0] = 1;
+gameBoard[2, 2] = 9;
+gameBoard[4, 4] = 5;
 
-// Cara 2: Langsung isi
-int[,] gameMap = {
-    {1, 1, 1, 1, 1},
-    {1, 0, 0, 0, 1},
-    {1, 0, 9, 0, 1},
-    {1, 0, 0, 0, 1},
-    {1, 1, 1, 1, 1}
+// Method 2: Direct initialization
+int[,] levelMap = new int[,]
+{
+    { 1, 1, 1, 1, 1 },
+    { 1, 0, 0, 0, 1 },
+    { 1, 0, 9, 0, 1 },
+    { 1, 0, 0, 0, 1 },
+    { 1, 1, 1, 1, 1 }
 };
 
-// Akses array 2D
-int value = gameMap[2, 2];  // 9
+// Accessing 2D array
+int value = levelMap[2, 2];  // 9
 
-// Looping array 2D
-for (int i = 0; i < gameMap.GetLength(0); i++)
+// Looping through 2D array
+Console.WriteLine("Game Map:");
+for (int row = 0; row < levelMap.GetLength(0); row++)
 {
-    for (int j = 0; j < gameMap.GetLength(1); j++)
+    for (int col = 0; col < levelMap.GetLength(1); col++)
     {
-        Console.Write(gameMap[i, j] + " ");
+        Console.Write(levelMap[row, col] + " ");
     }
     Console.WriteLine();
 }
+
+// Output:
+// 1 1 1 1 1 
+// 1 0 0 0 1 
+// 1 0 9 0 1 
+// 1 0 0 0 1 
+// 1 1 1 1 1 
 ```
 
-Array 3 Dimensi (Jarang Tapi Mungkin)
+### Three-Dimensional Array (Rare)
 
 ```csharp
 int[,,] cube = new int[3, 3, 3];
 cube[0, 0, 0] = 1;
 cube[1, 1, 1] = 5;
 cube[2, 2, 2] = 9;
+
+// Accessing
+int cubeValue = cube[1, 1, 1];  // 5
+```
+
+### Jagged Array
+
+```csharp
+// Array of arrays (each row can have different size)
+int[][] jagged = new int[3][];
+jagged[0] = new int[5];
+jagged[1] = new int[3];
+jagged[2] = new int[4];
+
+jagged[0][0] = 1;
+jagged[1][2] = 5;
+jagged[2][3] = 9;
+
+// Direct initialization
+int[][] scores = new int[][]
+{
+    new int[] { 100, 200, 300 },
+    new int[] { 150, 250 },
+    new int[] { 120, 180, 220, 300 }
+};
 ```
 
 ---
 
-8. List (Dynamic Array)
+## 8. List (Dynamic Array)
 
-Dasar List
+### Basic List Operations
 
 ```csharp
 using System.Collections.Generic;
 
-// Membuat List
-List<string> playerItems = new List<string>();
+// Creating Lists
+List<string> inventory = new List<string>();
 List<int> playerScores = new List<int>();
+List<double> prices = new List<double>();
 
-// Menambah data
-playerItems.Add("Potion");
-playerItems.Add("Key");
-playerItems.Add("Sword");
+// Adding items
+inventory.Add("Potion");
+inventory.Add("Elixir");
+inventory.Add("Sword");
 
-// Menambah banyak data sekaligus
-playerItems.AddRange(new[] { "Bow", "Arrow", "Shield" });
+// Adding multiple items
+inventory.AddRange(new[] { "Bow", "Arrow", "Shield" });
 
-// Menyisipkan di index tertentu
-playerItems.Insert(1, "Health Potion");  // index 1
+// Inserting at specific index
+inventory.Insert(1, "Health Potion");  // Insert at index 1
 
-// Menghapus data
-playerItems.Remove("Key");                 // hapus berdasarkan value
-playerItems.RemoveAt(0);                   // hapus index ke-0
-playerItems.RemoveRange(1, 2);             // hapus 2 data dari index 1
-playerItems.Clear();                       // hapus semua
+// Accessing elements
+string firstItem = inventory[0];
+string lastItem = inventory[inventory.Count - 1];
 
-// Akses data
-string firstItem = playerItems[0];
+// Removing items
+inventory.Remove("Potion");          // Remove by value
+inventory.RemoveAt(0);               // Remove by index
+inventory.RemoveRange(1, 2);         // Remove 2 items starting from index 1
+inventory.Clear();                   // Remove all items
 
-// Jumlah data
-int totalItems = playerItems.Count;
-
-// Cek apakah ada
-bool punyaSword = playerItems.Contains("Sword");
-
-// Cari index
-int index = playerItems.IndexOf("Sword");
+// Checking items
+int itemCount = inventory.Count;
+bool hasPotion = inventory.Contains("Potion");
+int indexOfBow = inventory.IndexOf("Bow");
 
 // Sorting
-playerItems.Sort();     // A-Z
-playerItems.Reverse();  // Z-A
+inventory.Sort();        // Sort alphabetically (A-Z)
+inventory.Reverse();     // Reverse order
 
-// Looping List
-foreach (string item in playerItems)
+// Getting range
+List<string> subList = inventory.GetRange(1, 3);  // Items from index 1, count 3
+```
+
+### Looping Through List
+
+```csharp
+List<string> enemies = new List<string> { "Goblin", "Orc", "Dragon" };
+
+// For loop
+for (int i = 0; i < enemies.Count; i++)
+{
+    Console.WriteLine($"{i + 1}. {enemies[i]}");
+}
+
+// Foreach loop
+foreach (string enemy in enemies)
+{
+    Console.WriteLine($"Enemy: {enemy}");
+}
+
+// LINQ (Language Integrated Query)
+var result = enemies.Where(e => e.Contains("o")).ToList();
+```
+
+### List with Custom Objects
+
+```csharp
+public class Player
+{
+    public string Name { get; set; }
+    public int Level { get; set; }
+}
+
+// Create list of players
+List<Player> players = new List<Player>();
+players.Add(new Player { Name = "Faris", Level = 10 });
+players.Add(new Player { Name = "Komi", Level = 8 });
+players.Add(new Player { Name = "Mika", Level = 12 });
+
+// Loop through players
+foreach (Player p in players)
+{
+    Console.WriteLine($"{p.Name} - Level {p.Level}");
+}
+```
+
+---
+
+## 9. Dictionary (Key-Value)
+
+### Basic Dictionary Operations
+
+```csharp
+using System.Collections.Generic;
+
+// Creating Dictionary
+Dictionary<string, int> playerStats = new Dictionary<string, int>();
+
+// Adding items
+playerStats.Add("Health", 100);
+playerStats.Add("Mana", 50);
+playerStats.Add("Strength", 15);
+playerStats.Add("Defense", 10);
+
+// Adding/updating with []
+playerStats["Experience"] = 0;
+playerStats["Level"] = 1;
+
+// Accessing values
+int health = playerStats["Health"];    // 100
+int level = playerStats["Level"];       // 1
+
+// Updating value
+playerStats["Health"] = 80;
+
+// Removing items
+playerStats.Remove("Mana");
+playerStats.Clear();  // Remove all
+
+// Checking existence
+bool hasHealth = playerStats.ContainsKey("Health");
+bool hasValue100 = playerStats.ContainsValue(100);
+
+// Count
+int totalStats = playerStats.Count;
+```
+
+### Safe Dictionary Access (TryGetValue)
+
+```csharp
+Dictionary<string, int> stats = new Dictionary<string, int>
+{
+    { "Health", 100 },
+    { "Mana", 50 }
+};
+
+// Safe way to get value (won't crash if key doesn't exist)
+if (stats.TryGetValue("Stamina", out int stamina))
+{
+    Console.WriteLine($"Stamina: {stamina}");
+}
+else
+{
+    Console.WriteLine("Stamina not found!");
+}
+```
+
+### Looping Through Dictionary
+
+```csharp
+Dictionary<string, int> inventory = new Dictionary<string, int>
+{
+    { "Sword", 1 },
+    { "Potion", 5 },
+    { "Arrow", 20 }
+};
+
+// Loop with keys only
+foreach (string item in inventory.Keys)
 {
     Console.WriteLine(item);
 }
 
-// List dengan custom class
-List<Player> players = new List<Player>();
-players.Add(new Player { Name = "Faris", Level = 10 });
+// Loop with values only
+foreach (int quantity in inventory.Values)
+{
+    Console.WriteLine(quantity);
+}
+
+// Loop with key and value
+foreach (KeyValuePair<string, int> kvp in inventory)
+{
+    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+}
+
+// Deconstruction (C# 7+)
+foreach (var (item, quantity) in inventory)
+{
+    Console.WriteLine($"{item} x{quantity}");
+}
 ```
 
-List Method Lengkap
-
-Method Fungsi
-Add(item) Menambah item
-AddRange(items) Menambah banyak item
-Insert(index, item) Menyisipkan di index
-Remove(item) Hapus berdasarkan value
-RemoveAt(index) Hapus berdasarkan index
-RemoveRange(index, count) Hapus beberapa
-Clear() Hapus semua
-Contains(item) Cek apakah ada
-IndexOf(item) Cari index
-Sort() Urutkan ascending
-Reverse() Balik urutan
-Count Jumlah item (property)
-
----
-
-9. Dictionary
-
-Dasar Dictionary
+### Dictionary with Different Types
 
 ```csharp
-using System.Collections.Generic;
-
-// Membuat Dictionary (Key - Value)
-Dictionary<string, int> playerStats = new Dictionary<string, int>();
-
-// Menambah data
-playerStats.Add("Health", 100);
-playerStats.Add("Mana", 50);
-playerStats.Add("Exp", 0);
-playerStats.Add("Level", 1);
-
-// Cara lain
-playerStats["Strength"] = 10;
-playerStats["Defense"] = 5;
-
-// Mengambil data
-int health = playerStats["Health"];  // 100
-
-// Mengubah data
-playerStats["Health"] = 80;
-
-// Menghapus data
-playerStats.Remove("Mana");
-
-// Cek apakah ada key
-if (playerStats.ContainsKey("Health"))
+// String to List
+Dictionary<string, List<string>> heroAbilities = 
+    new Dictionary<string, List<string>>
 {
-    Console.WriteLine("Ada Health!");
+    { "Warrior", new List<string> { "Slash", "Defend", "Charge" } },
+    { "Mage", new List<string> { "Fireball", "Teleport", "Heal" } },
+    { "Archer", new List<string> { "Shoot", "Dodge", "Multishot" } }
+};
+
+// Access nested data
+List<string> warriorAbilities = heroAbilities["Warrior"];
+foreach (string ability in warriorAbilities)
+{
+    Console.WriteLine(ability);
 }
 
-// Cek apakah ada value
-if (playerStats.ContainsValue(100))
+// Integer to String
+Dictionary<int, string> playerById = new Dictionary<int, string>
 {
-    Console.WriteLine("Ada yang bernilai 100!");
-}
+    { 1, "Faris" },
+    { 2, "Komi" },
+    { 3, "Mika" }
+};
 
-// Jumlah data
-int count = playerStats.Count;
-
-// Looping Dictionary (hanya key)
-foreach (string key in playerStats.Keys)
-{
-    Console.WriteLine(key);
-}
-
-// Looping Dictionary (key dan value)
-foreach (KeyValuePair<string, int> stat in playerStats)
-{
-    Console.WriteLine($"{stat.Key}: {stat.Value}");
-}
-
-// Dictionary dengan tipe berbeda
-Dictionary<int, string> playerById = new Dictionary<int, string>();
-playerById[1] = "Faris";
-playerById[2] = "Komi";
-```
-
-Dictionary Method Lengkap
-
-Method Fungsi
-Add(key, value) Menambah data
-Remove(key) Menghapus berdasarkan key
-Clear() Menghapus semua
-ContainsKey(key) Cek apakah key ada
-ContainsValue(value) Cek apakah value ada
-TryGetValue(key, out value) Ambil data aman (tidak error)
-Count Jumlah data
-
-TryGetValue (Aman - Tidak Error)
-
-```csharp
-Dictionary<string, int> stats = new Dictionary<string, int>();
-stats.Add("Health", 100);
-
-// Cara aman ambil data
-if (stats.TryGetValue("Mana", out int mana))
-{
-    Console.WriteLine($"Mana: {mana}");
-}
-else
-{
-    Console.WriteLine("Mana tidak ada!");
-}
+string playerName = playerById[1];  // "Faris"
 ```
 
 ---
 
-10. String Operation
+## 10. String Operations
 
-Dasar String
+### Basic String Operations
 
 ```csharp
-string name = "Faris Ganteng";
+string playerName = "Faris The Legend";
 
-// Panjang string
-int length = name.Length;  // 13
+// Length
+int length = playerName.Length;  // 17
 
-// Menggabungkan string
-string greeting = "Halo " + name;
-string greeting2 = string.Concat("Halo ", name);
-string greeting3 = $"Halo {name}";  // String interpolation (C# 6+)
-string greeting4 = string.Format("Halo {0}", name);
+// Concatenation
+string greeting = "Hello " + playerName;
+string greeting2 = string.Concat("Greetings, ", playerName);
+string greeting3 = $"Welcome back, {playerName}";  // String interpolation
+string greeting4 = string.Format("Hello {0}, welcome!", playerName);
 
-// Mengambil substring
-string firstName = name.Substring(0, 5);   // "Faris"
-string lastName = name.Substring(6);        // "Ganteng"
+// Substring (extract part of string)
+string firstName = playerName.Substring(0, 5);     // "Faris"
+string lastName = playerName.Substring(6);         // "The Legend"
+string middle = playerName.Substring(6, 3);        // "The"
 
-// Mencari posisi
-int index = name.IndexOf("Ganteng");  // 6
-int lastIndex = name.LastIndexOf("n"); // 12
+// Finding position
+int indexOfThe = playerName.IndexOf("The");        // 6
+int lastIndexOfA = playerName.LastIndexOf("a");    // 13
 
-// Cek apakah mengandung kata
-bool contains = name.Contains("Faris");  // true
-bool startsWith = name.StartsWith("Far"); // true
-bool endsWith = name.EndsWith("eng");     // true
+// Checking content
+bool contains = playerName.Contains("Faris");      // true
+bool startsWith = playerName.StartsWith("Faris");  // true
+bool endsWith = playerName.EndsWith("end");        // true
 
-// Mengganti kata
-string newName = name.Replace("Ganteng", "Cantik");  // "Faris Cantik"
+// Replacing text
+string newName = playerName.Replace("Legend", "King");  // "Faris The King"
 
-// Hapus spasi di awal/akhir
-string messy = "  Hello  ";
-string clean = messy.Trim();  // "Hello"
-string trimStart = messy.TrimStart();  // "Hello  "
-string trimEnd = messy.TrimEnd();      // "  Hello"
+// Trimming whitespace
+string messy = "   Hello World   ";
+string clean = messy.Trim();         // "Hello World"
+string trimStart = messy.TrimStart(); // "Hello World   "
+string trimEnd = messy.TrimEnd();     // "   Hello World"
 
-// Ubah huruf besar/kecil
-string upper = name.ToUpper();  // "FARIS GANTENG"
-string lower = name.ToLower();  // "faris ganteng"
+// Change case
+string upper = playerName.ToUpper();  // "FARIS THE LEGEND"
+string lower = playerName.ToLower();  // "faris the legend"
 
-// Split (memecah string menjadi array)
+// Splitting into array
 string data = "Faris,20,100,true";
 string[] parts = data.Split(',');
-string namePart = parts[0];   // "Faris"
-string agePart = parts[1];     // "20"
+string name = parts[0];    // "Faris"
+string age = parts[1];     // "20"
+string score = parts[2];   // "100"
+string active = parts[3];  // "true"
 
-// Join (menggabungkan array jadi string)
+// Joining array into string
 string[] items = { "Sword", "Shield", "Potion" };
 string inventory = string.Join(", ", items);  // "Sword, Shield, Potion"
+```
 
-// IsNullOrEmpty (Cek kosong)
+### Checking Empty or Null
+
+```csharp
+string input = "";
+
+// Check if null or empty
 if (string.IsNullOrEmpty(input))
 {
-    MessageBox.Show("Input tidak boleh kosong!");
+    Console.WriteLine("Input is empty!");
 }
 
-// IsNullOrWhiteSpace (Cek kosong atau cuma spasi)
+// Check if null, empty, or only whitespace
 if (string.IsNullOrWhiteSpace(input))
 {
-    MessageBox.Show("Input tidak boleh kosong atau cuma spasi!");
+    Console.WriteLine("Input is empty or whitespace!");
 }
 ```
 
-StringBuilder (Untuk String Panjang)
+### String Builder (For Complex String Building)
 
 ```csharp
 using System.Text;
 
 StringBuilder sb = new StringBuilder();
 sb.Append("Faris ");
-sb.AppendLine("Ganteng");
-sb.Append("Belajar ");
+sb.AppendLine("The Legend");  // Adds newline
+sb.Append("Loves ");
 sb.Append("C#");
 
-string result = sb.ToString();  // "Faris Ganteng\nBelajar C#"
+string result = sb.ToString();  
+// "Faris The Legend\nLoves C#"
+
+// More efficient than string concatenation in loops
+var sb2 = new StringBuilder();
+for (int i = 0; i < 100; i++)
+{
+    sb2.Append(i);
+    sb2.Append(", ");
+}
+string allNumbers = sb2.ToString();
 ```
 
 ---
 
-11. Random Number
+## 11. Random Numbers
+
+### Basic Random Generation
 
 ```csharp
-// Membuat Random object
 Random rnd = new Random();
 
-// Angka random 0 s/d 99
-int randomNumber = rnd.Next(100);
+// Random number 0 to 99
+int randomNum = rnd.Next(100);
 
-// Angka random 1 s/d 100
+// Random number 1 to 100 (inclusive)
 int randomDamage = rnd.Next(1, 101);
 
-// Angka random 0.0 s/d 1.0 (double)
-double randomDouble = rnd.NextDouble();
+// Random double 0.0 to 1.0
+double randomPercent = rnd.NextDouble();
 
-// Angka random untuk array
-string[] enemies = { "Goblin", "Orc", "Dragon", "Slime" };
-int randomIndex = rnd.Next(enemies.Length);
-string randomEnemy = enemies[randomIndex];
-
-// Random bool (50% true, 50% false)
+// Random boolean (50% true, 50% false)
 bool isCritical = rnd.Next(2) == 1;
+```
 
-// Random dengan seed (hasil sama setiap run)
-Random fixedRnd = new Random(123);  // angka seed
-int sameNumber = fixedRnd.Next(100); // akan sama setiap program jalan
+### Practical Game Examples
 
-// Contoh untuk game
+```csharp
 Random rng = new Random();
-int attackDamage = rng.Next(15, 30);     // damage antara 15-30
-int critChance = rng.Next(1, 101);       // 1-100
-bool isCrit = critChance <= 20;           // 20% chance crit
-int finalDamage = isCrit ? attackDamage * 2 : attackDamage;
+
+// Random attack damage (15-30)
+int baseDamage = 20;
+int variableDamage = rng.Next(baseDamage - 5, baseDamage + 11);
+
+// Random critical hit (20% chance)
+int critChance = rng.Next(1, 101);
+bool isCrit = critChance <= 20;
+int finalDamage = isCrit ? variableDamage * 2 : variableDamage;
+
+// Random enemy encounter
+string[] enemies = { "Goblin", "Orc", "Dragon", "Slime", "Skeleton" };
+string randomEnemy = enemies[rng.Next(enemies.Length)];
+
+// Random reward
+int goldReward = rng.Next(50, 201);  // 50-200 gold
+
+// Shuffling items (Fisher-Yates)
+int[] deck = Enumerable.Range(0, 52).ToArray();
+for (int i = deck.Length - 1; i > 0; i--)
+{
+    int randomIndex = rng.Next(i + 1);
+    // Swap
+    int temp = deck[i];
+    deck[i] = deck[randomIndex];
+    deck[randomIndex] = temp;
+}
+```
+
+### Fixed Seed for Reproducibility
+
+```csharp
+// Same seed = same random numbers (for testing)
+Random fixedRng = new Random(42);
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(fixedRng.Next(100));
+}
+// Output will be the same every time
+
+// Without seed = different each run
+Random variableRng = new Random();
 ```
 
 ---
 
-12. Method (Fungsi)
+## 12. Methods (Functions)
 
-Dasar Method
+### Basic Method Structure
 
 ```csharp
-// Method tanpa return (void)
-public void DisplayMessage()
+// Method with no parameters and no return
+public void SayHello()
 {
-    Console.WriteLine("Hello World!");
+    Console.WriteLine("Hello, World!");
 }
 
-// Method dengan parameter
-public void GreetPlayer(string playerName)
+// Method with parameters
+public void GreetPlayer(string name)
 {
-    Console.WriteLine($"Halo {playerName}!");
+    Console.WriteLine($"Hello, {name}!");
 }
 
-// Method dengan return value
+// Method with return value
 public int AddNumbers(int a, int b)
 {
     return a + b;
 }
 
-// Method dengan multiple parameter
-public float CalculateDamage(float baseDamage, float multiplier, int level)
+// Method with multiple parameters and return
+public float CalculateDamage(float baseDamage, float modifier, int level)
 {
-    return baseDamage * multiplier * (1 + level * 0.1f);
+    return baseDamage * modifier * (1 + level * 0.1f);
+}
+```
+
+### Default Parameters
+
+```csharp
+public void Attack(string target, int damage = 10, bool isCrit = false)
+{
+    int finalDamage = isCrit ? damage * 2 : damage;
+    Console.WriteLine($"{target} takes {finalDamage} damage!");
 }
 
-// Method dengan parameter default
-public void Attack(string target, int damage = 10)
+// Calling with different parameter combinations
+Attack("Goblin");                    // damage=10, isCrit=false
+Attack("Orc", 25);                   // damage=25, isCrit=false
+Attack("Dragon", 50, true);          // damage=50, isCrit=true
+```
+
+### Named Arguments
+
+```csharp
+public void CreateCharacter(string name, int level, string classType, int health = 100)
 {
-    Console.WriteLine($"{target} terkena damage {damage}");
+    Console.WriteLine($"{name} - Level {level} {classType} (HP: {health})");
 }
-// Attack("Goblin") → damage 10
-// Attack("Dragon", 50) → damage 50
 
-// Method dengan named arguments
-Attack(damage: 30, target: "Orc");
+// Using named arguments
+CreateCharacter(name: "Faris", level: 10, classType: "Warrior");
+CreateCharacter(health: 150, classType: "Warrior", level: 10, name: "Faris");
+```
 
-// Method overload (nama sama, parameter beda)
-public int Multiply(int a, int b) { return a * b; }
-public double Multiply(double a, double b) { return a * b; }
+### Method Overloading
 
-// Method dengan output parameter (out)
-public bool TryDivide(int a, int b, out int result)
+```csharp
+// Same name, different parameters
+public int Multiply(int a, int b)
 {
-    if (b == 0)
+    return a * b;
+}
+
+public double Multiply(double a, double b)
+{
+    return a * b;
+}
+
+public string Multiply(string s, int times)
+{
+    string result = "";
+    for (int i = 0; i < times; i++)
+    {
+        result += s;
+    }
+    return result;
+}
+
+// Usage
+int result1 = Multiply(5, 3);              // 15
+double result2 = Multiply(5.5, 2.2);       // 12.1
+string result3 = Multiply("Ha", 3);        // "HaHaHa"
+```
+
+### Out Parameter (Return Multiple Values)
+
+```csharp
+public bool TryDivide(int dividend, int divisor, out int result, out double resultDouble)
+{
+    if (divisor == 0)
     {
         result = 0;
+        resultDouble = 0.0;
         return false;
     }
-    result = a / b;
+    result = dividend / divisor;
+    resultDouble = (double)dividend / divisor;
     return true;
 }
 
-// Cara pakai
-if (TryDivide(10, 2, out int hasil))
+// Usage
+if (TryDivide(10, 3, out int intResult, out double doubleResult))
 {
-    Console.WriteLine($"Hasil: {hasil}");
+    Console.WriteLine($"Integer: {intResult}, Double: {doubleResult}");
+}
+```
+
+### Ref Parameter (Pass by Reference)
+
+```csharp
+public void IncreaseHealth(ref int health, int amount)
+{
+    health += amount;
 }
 
-// Method dengan ref parameter
-public void IncreaseByRef(ref int value)
-{
-    value += 10;
-}
+// Usage
+int playerHealth = 50;
+IncreaseHealth(ref playerHealth, 30);
+Console.WriteLine(playerHealth);  // 80 (value changed)
+```
 
-// Cara pakai
-int score = 50;
-IncreaseByRef(ref score);  // score sekarang 60
+### Params Parameter (Variable Arguments)
 
-// Method dengan params (parameter tidak terbatas)
+```csharp
 public int SumNumbers(params int[] numbers)
 {
     int total = 0;
@@ -782,34 +1282,36 @@ public int SumNumbers(params int[] numbers)
     return total;
 }
 
-// Cara pakai
-int total = SumNumbers(1, 2, 3, 4, 5);  // 15
+// Usage
+int sum1 = SumNumbers(1, 2, 3);              // 6
+int sum2 = SumNumbers(10, 20, 30, 40, 50);   // 150
+int sum3 = SumNumbers();                     // 0
 ```
 
-Method untuk Game
+### Methods for Game Logic
 
 ```csharp
 public class GameLogic
 {
-    // Hitung damage
-    public int CalculateDamage(int baseAttack, int enemyDefense)
+    // Calculate damage
+    public int CalculateFinalDamage(int baseAttack, int enemyDefense, Random rnd)
     {
-        int damage = baseAttack - enemyDefense;
-        return damage > 0 ? damage : 1;  // minimal damage 1
+        int variance = rnd.Next(baseAttack / 2);
+        int damage = baseAttack + variance - enemyDefense;
+        return damage > 1 ? damage : 1;  // Minimum damage is 1
     }
     
-    // Cek level up
+    // Check level up
     public bool CheckLevelUp(int currentExp, int expNeeded)
     {
         return currentExp >= expNeeded;
     }
     
     // Random encounter
-    public string RandomEnemy()
+    public string RandomEncounter(Random rnd)
     {
-        string[] enemies = { "Goblin", "Orc", "Slime", "Skeleton" };
-        Random rnd = new Random();
-        return enemies[rnd.Next(enemies.Length)];
+        string[] encounters = { "Enemy!", "Treasure!", "Nothing" };
+        return encounters[rnd.Next(encounters.Length)];
     }
     
     // Heal player
@@ -818,454 +1320,515 @@ public class GameLogic
         int newHealth = currentHealth + healAmount;
         return newHealth > maxHealth ? maxHealth : newHealth;
     }
+    
+    // Is player dead
+    public bool IsPlayerDead(int health)
+    {
+        return health <= 0;
+    }
 }
 ```
 
 ---
 
-13. Class & Object
+## 13. Classes & Objects
 
-Dasar Class
+### Basic Class Structure
 
 ```csharp
-// Membuat Class
 public class Player
 {
-    // Fields (variabel anggota)
+    // Fields (private data)
     private string name;
     private int level;
     private int health;
+    private int maxHealth;
     
-    // Properties (getter setter modern)
+    // Properties (public access with get/set)
     public string Name 
     { 
         get { return name; }
         set { name = value; }
     }
     
-    // Auto-implemented property (cara simpel)
+    // Auto-implemented property (shorthand)
     public int Level { get; set; }
-    public int Health { get; set; }
-    public int MaxHealth { get; set; }
+    public int Experience { get; set; }
     public List<string> Inventory { get; set; }
+    public int Gold { get; set; }
     
-    // Constructor (dijalankan saat object dibuat)
+    // Constructor (called when object is created)
     public Player()
     {
         Name = "New Player";
         Level = 1;
-        Health = 100;
-        MaxHealth = 100;
+        health = 100;
+        maxHealth = 100;
+        Experience = 0;
+        Gold = 0;
         Inventory = new List<string>();
     }
     
-    // Constructor dengan parameter
-    public Player(string name, int level)
+    // Constructor with parameters
+    public Player(string playerName, int startingLevel)
     {
-        Name = name;
-        Level = level;
-        Health = 100;
-        MaxHealth = 100;
+        Name = playerName;
+        Level = startingLevel;
+        health = 100;
+        maxHealth = 100;
+        Experience = 0;
+        Gold = 0;
         Inventory = new List<string>();
     }
     
-    // Method dalam class
+    // Methods
     public void TakeDamage(int damage)
     {
-        Health -= damage;
-        if (Health <= 0)
+        health -= damage;
+        if (health <= 0)
         {
-            Health = 0;
+            health = 0;
             Die();
         }
     }
     
     public void Heal(int amount)
     {
-        Health += amount;
-        if (Health > MaxHealth)
+        health += amount;
+        if (health > maxHealth)
         {
-            Health = MaxHealth;
+            health = maxHealth;
+        }
+    }
+    
+    public void AddExperience(int exp)
+    {
+        Experience += exp;
+        if (Experience >= Level * 100)
+        {
+            LevelUp();
         }
     }
     
     public void AddItem(string item)
     {
         Inventory.Add(item);
-        Console.WriteLine($"{item} ditambahkan ke inventory!");
+        Console.WriteLine($"{item} added to inventory!");
+    }
+    
+    public void AddGold(int amount)
+    {
+        Gold += amount;
+        Console.WriteLine($"Gold increased by {amount}. Total: {Gold}");
+    }
+    
+    private void LevelUp()
+    {
+        Level++;
+        maxHealth += 10;
+        health = maxHealth;
+        Experience = 0;
+        Console.WriteLine($"Level Up! Now level {Level}");
     }
     
     private void Die()
     {
-        Console.WriteLine($"{Name} telah mati... Game Over!");
+        Console.WriteLine($"{Name} has died... Game Over!");
     }
     
     public void DisplayInfo()
     {
-        Console.WriteLine($"=== Player Info ===");
+        Console.WriteLine("=== Player Information ===");
         Console.WriteLine($"Name: {Name}");
         Console.WriteLine($"Level: {Level}");
-        Console.WriteLine($"Health: {Health}/{MaxHealth}");
+        Console.WriteLine($"Health: {health}/{maxHealth}");
+        Console.WriteLine($"Experience: {Experience}");
+        Console.WriteLine($"Gold: {Gold}");
         Console.WriteLine($"Inventory: {string.Join(", ", Inventory)}");
     }
 }
+```
 
-// Cara menggunakan Class
+### Using the Class (Creating Objects)
+
+```csharp
+// Create player objects
 Player player1 = new Player();
 player1.Name = "Faris";
 player1.Level = 5;
-player1.AddItem("Sword");
-player1.AddItem("Potion");
-player1.DisplayInfo();
 
 Player player2 = new Player("Komi", 10);
-player2.TakeDamage(30);
-player2.Heal(20);
+
+// Use methods
+player1.AddItem("Sword");
+player1.AddItem("Potion");
+player1.AddGold(100);
+player1.TakeDamage(20);
+player1.Heal(15);
+player1.AddExperience(150);
+
+// Display info
+player1.DisplayInfo();
+
+// player2.DisplayInfo();
 ```
 
-Inheritance (Pewarisan)
+### Inheritance (Class Inheriting from Another)
 
 ```csharp
-// Base class (parent)
+// Base class
 public class Character
 {
     public string Name { get; set; }
+    public int Level { get; set; }
     public int Health { get; set; }
-    public int Damage { get; set; }
     
-    public virtual void Attack(Character target)
+    public virtual void TakeDamage(int damage)
     {
-        target.Health -= Damage;
-        Console.WriteLine($"{Name} menyerang {target.Name} dengan damage {Damage}");
+        Health -= damage;
     }
     
-    public virtual void Display()
+    public virtual void DisplayInfo()
     {
-        Console.WriteLine($"Name: {Name}, Health: {Health}");
+        Console.WriteLine($"{Name} - Level {Level}");
     }
 }
 
-// Derived class (child) - Warrior
+// Derived class
 public class Warrior : Character
 {
     public int Armor { get; set; }
     
     public Warrior()
     {
-        Health = 150;
-        Damage = 25;
-        Armor = 20;
+        Armor = 5;
     }
     
-    public override void Attack(Character target)
+    // Override method
+    public override void TakeDamage(int damage)
     {
-        int finalDamage = Damage + (Armor / 10);
-        target.Health -= finalDamage;
-        Console.WriteLine($"[Warrior] {Name} menyerang dengan damage {finalDamage}!");
+        int reducedDamage = damage - Armor;
+        base.TakeDamage(reducedDamage > 0 ? reducedDamage : 1);
     }
     
-    public void ShieldBlock()
+    public override void DisplayInfo()
     {
-        Console.WriteLine($"{Name} memblok dengan shield!");
+        base.DisplayInfo();
+        Console.WriteLine($"Armor: {Armor}");
     }
 }
 
-// Derived class (child) - Mage
-public class Mage : Character
-{
-    public int Mana { get; set; }
-    
-    public Mage()
-    {
-        Health = 80;
-        Damage = 40;
-        Mana = 100;
-    }
-    
-    public override void Attack(Character target)
-    {
-        if (Mana >= 10)
-        {
-            Mana -= 10;
-            target.Health -= Damage;
-            Console.WriteLine($"[Mage] {Name} melontarkan fireball dengan damage {Damage}!");
-        }
-        else
-        {
-            Console.WriteLine($"[Mage] {Name} kehabisan mana!");
-        }
-    }
-    
-    public void CastSpell(string spell)
-    {
-        Console.WriteLine($"{Name} menggunakan spell: {spell}!");
-    }
-}
-
-// Cara pakai
+// Usage
 Warrior warrior = new Warrior();
-warrior.Name = "Arthas";
-Mage mage = new Mage();
-mage.Name = "Jaina";
-
-warrior.Attack(mage);
-mage.Attack(warrior);
-```
-
-Static Class & Static Method
-
-```csharp
-// Static class (tidak bisa diinstansiasi)
-public static class GameManager
-{
-    public static int TotalEnemies { get; set; }
-    public static int TotalPlayers { get; set; }
-    
-    public static void StartGame()
-    {
-        Console.WriteLine("Game Started!");
-        TotalEnemies = 0;
-        TotalPlayers = 1;
-    }
-    
-    public static void GameOver()
-    {
-        Console.WriteLine("Game Over!");
-    }
-}
-
-// Langsung dipakai tanpa membuat object
-GameManager.StartGame();
-GameManager.TotalEnemies = 10;
+warrior.Name = "Faris";
+warrior.Level = 10;
+warrior.Health = 150;
+warrior.TakeDamage(20);  // Takes less damage due to armor
+warrior.DisplayInfo();
 ```
 
 ---
 
-14. Exception Handling (Try-Catch)
+## 14. Exception Handling (Try-Catch)
+
+### Basic Try-Catch
 
 ```csharp
-// Dasar Try-Catch
 try
 {
-    int result = 10 / int.Parse("0");
-    Console.WriteLine(result);
+    string input = Console.ReadLine();
+    int number = int.Parse(input);
+    Console.WriteLine($"You entered: {number}");
 }
-catch (DivideByZeroException ex)
+catch (FormatException)
 {
-    Console.WriteLine("Error: Tidak bisa membagi dengan nol!");
-    Console.WriteLine($"Detail: {ex.Message}");
-}
-catch (FormatException ex)
-{
-    Console.WriteLine("Error: Format angka salah!");
+    Console.WriteLine("Error: Please enter a valid number!");
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Error umum: {ex.Message}");
+    Console.WriteLine($"An error occurred: {ex.Message}");
 }
+```
 
-// Try-Catch-Finally
+### Try-Catch-Finally
+
+```csharp
+FileStream file = null;
 try
 {
-    SqlConnection conn = new SqlConnection(connectionString);
-    conn.Open();
-    // proses database
+    file = new FileStream("data.txt", FileMode.Open);
+    // Read file
+    Console.WriteLine("File opened successfully!");
 }
-catch (SqlException ex)
+catch (FileNotFoundException)
 {
-    MessageBox.Show("Error database: " + ex.Message);
+    Console.WriteLine("Error: File not found!");
 }
 finally
 {
-    // Selalu dijalankan (baik error atau tidak)
-    if (conn != null)
-        conn.Close();
+    // Always executed
+    file?.Close();
+    Console.WriteLine("File closed.");
 }
+```
 
-// Throw Exception (melempar error sendiri)
-public void ValidateAge(int age)
-{
-    if (age < 0)
-        throw new ArgumentException("Umur tidak boleh negatif!");
-    if (age < 17)
-        throw new Exception("Umur tidak mencukupi untuk game ini!");
-}
+### Multiple Specific Exceptions
 
-// Cara pakai
+```csharp
 try
 {
-    ValidateAge(-5);
+    int[] numbers = { 1, 2, 3 };
+    int value = numbers[10];  // IndexOutOfRangeException
+    
+    string text = null;
+    int length = text.Length;  // NullReferenceException
+    
+    int result = 10 / 0;  // DivideByZeroException
 }
-catch (ArgumentException ex)
+catch (IndexOutOfRangeException)
 {
-    Console.WriteLine(ex.Message);
+    Console.WriteLine("Error: Array index out of range!");
+}
+catch (NullReferenceException)
+{
+    Console.WriteLine("Error: Null reference!");
+}
+catch (DivideByZeroException)
+{
+    Console.WriteLine("Error: Cannot divide by zero!");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
+}
+```
+
+### Throwing Custom Exceptions
+
+```csharp
+public class InsufficientHealthException : Exception
+{
+    public InsufficientHealthException(string message) : base(message)
+    {
+    }
+}
+
+public void Attack(int damage)
+{
+    if (damage < 0)
+    {
+        throw new InsufficientHealthException("Damage cannot be negative!");
+    }
+    
+    Console.WriteLine($"Attack for {damage} damage!");
+}
+
+// Usage
+try
+{
+    Attack(-10);
+}
+catch (InsufficientHealthException ex)
+{
+    Console.WriteLine($"Attack failed: {ex.Message}");
 }
 ```
 
 ---
 
-15. Enum (Data Tetap)
+## 15. Enum (Constant Data)
+
+### Basic Enum
 
 ```csharp
-// Membuat Enum
 public enum PlayerClass
 {
-    Warrior,
-    Mage,
-    Archer,
-    Assassin
+    Warrior,  // 0
+    Mage,     // 1
+    Archer,   // 2
+    Rogue     // 3
 }
 
-public enum ItemType
+public enum Direction
 {
-    Weapon,
-    Armor,
-    Potion,
-    KeyItem
+    North,
+    South,
+    East,
+    West
 }
 
-public enum GameState
-{
-    Running,
-    Paused,
-    GameOver,
-    Victory
-}
-
-// Enum dengan nilai custom
-public enum DamageType
-{
-    Physical = 1,
-    Magic = 2,
-    Fire = 3,
-    Ice = 4,
-    Poison = 5
-}
-
-// Cara pakai Enum
+// Usage
 PlayerClass myClass = PlayerClass.Warrior;
-ItemType item = ItemType.Potion;
+Direction facing = Direction.North;
 
-// Switch dengan Enum
-switch (myClass)
+Console.WriteLine(myClass);      // Warrior
+Console.WriteLine((int)myClass);  // 0
+
+if (myClass == PlayerClass.Warrior)
 {
-    case PlayerClass.Warrior:
-        Console.WriteLine("Kamu adalah prajurit tangguh!");
-        break;
-    case PlayerClass.Mage:
-        Console.WriteLine("Kamu adalah penyihir bijak!");
-        break;
-    case PlayerClass.Archer:
-        Console.WriteLine("Kamu adalah pemanah akurat!");
-        break;
-    case PlayerClass.Assassin:
-        Console.WriteLine("Kamu adalah bayangan maut!");
-        break;
-}
-
-// Konversi Enum ke string
-string className = myClass.ToString();  // "Warrior"
-
-// Konversi string ke Enum
-PlayerClass newClass = (PlayerClass)Enum.Parse(typeof(PlayerClass), "Mage");
-
-// Konversi Enum ke int
-int classValue = (int)PlayerClass.Mage;  // 1
-int damageValue = (int)DamageType.Fire;   // 3
-
-// Looping semua nilai Enum
-foreach (PlayerClass pc in Enum.GetValues(typeof(PlayerClass)))
-{
-    Console.WriteLine(pc);
+    Console.WriteLine("I am a warrior!");
 }
 ```
 
----
-
-16. DateTime (Tanggal & Waktu)
+### Enum with Custom Values
 
 ```csharp
-// Mendapatkan waktu sekarang
-DateTime now = DateTime.Now;           // 12/06/2025 14:30:25
-DateTime today = DateTime.Today;       // 12/06/2025 00:00:00
-DateTime utcNow = DateTime.UtcNow;     // UTC time
+public enum ItemType
+{
+    Weapon = 1,
+    Armor = 2,
+    Consumable = 3,
+    Quest = 4
+}
 
-// Membuat DateTime tertentu
-DateTime specificDate = new DateTime(2025, 12, 25);           // 25 Des 2025
-DateTime specificDateTime = new DateTime(2025, 12, 25, 14, 30, 0);  // 25 Des 2025 14:30:00
+public enum Status
+{
+    Alive = 1,
+    Dead = 0,
+    Stunned = 2,
+    Poisoned = 3
+}
 
-// Ekstrak bagian dari DateTime
-int year = now.Year;           // 2025
-int month = now.Month;         // 6
-int day = now.Day;             // 12
-int hour = now.Hour;           // 14
-int minute = now.Minute;       // 30
-int second = now.Second;       // 25
-DayOfWeek weekday = now.DayOfWeek;  // Thursday
+// Usage
+ItemType item = ItemType.Weapon;
+Console.WriteLine((int)item);  // 1
+```
 
-// Format DateTime ke string
-string format1 = now.ToString("dd/MM/yyyy");     // 12/06/2025
-string format2 = now.ToString("dd-MM-yyyy");     // 12-06-2025
-string format3 = now.ToString("yyyy-MM-dd");     // 2025-06-12
-string format4 = now.ToString("HH:mm:ss");       // 14:30:25
-string format5 = now.ToString("dd MMMM yyyy");   // 12 June 2025
+### Enum in Switch Statement
 
-// Operasi DateTime
-DateTime tomorrow = now.AddDays(1);
-DateTime yesterday = now.AddDays(-1);
-DateTime nextWeek = now.AddDays(7);
-DateTime nextHour = now.AddHours(1);
-DateTime nextMonth = now.AddMonths(1);
+```csharp
+public enum GameState
+{
+    MainMenu,
+    Playing,
+    Paused,
+    GameOver
+}
 
-// Menghitung selisih
-DateTime start = new DateTime(2025, 1, 1);
-DateTime end = DateTime.Now;
-TimeSpan diff = end - start;
-int daysDiff = diff.Days;        // jumlah hari
-double totalHours = diff.TotalHours;
+GameState state = GameState.Playing;
 
-// Untuk save game / waktu bermain
-DateTime gameStart = DateTime.Now;
-// ... game berjalan ...
-TimeSpan playTime = DateTime.Now - gameStart;
-Console.WriteLine($"Waktu bermain: {playTime.Hours} jam {playTime.Minutes} menit");
+switch (state)
+{
+    case GameState.MainMenu:
+        Console.WriteLine("Show main menu");
+        break;
+    case GameState.Playing:
+        Console.WriteLine("Game is running");
+        break;
+    case GameState.Paused:
+        Console.WriteLine("Game is paused");
+        break;
+    case GameState.GameOver:
+        Console.WriteLine("Game over screen");
+        break;
+}
 ```
 
 ---
 
-17. File I/O (Baca Tulis File)
+## 16. DateTime (Date & Time)
+
+### Basic DateTime
+
+```csharp
+// Current date and time
+DateTime now = DateTime.Now;
+Console.WriteLine(now);  // e.g., 6/15/2026 2:30:45 PM
+
+// Current UTC time
+DateTime utcNow = DateTime.UtcNow;
+
+// Specific date
+DateTime birthDate = new DateTime(2005, 1, 15);
+Console.WriteLine(birthDate);  // 1/15/2005 12:00:00 AM
+
+// Parse from string
+DateTime parsed = DateTime.Parse("2026-06-15 14:30:00");
+
+// Components
+Console.WriteLine(now.Year);      // 2026
+Console.WriteLine(now.Month);     // 6
+Console.WriteLine(now.Day);       // 15
+Console.WriteLine(now.Hour);      // 14
+Console.WriteLine(now.Minute);    // 30
+Console.WriteLine(now.Second);    // 45
+```
+
+### DateTime Calculations
+
+```csharp
+DateTime startDate = DateTime.Now;
+DateTime futureDate = startDate.AddDays(7);        // 7 days later
+DateTime yesterday = startDate.AddDays(-1);        // 1 day ago
+DateTime nextMonth = startDate.AddMonths(1);       // 1 month later
+DateTime nextYear = startDate.AddYears(1);         // 1 year later
+DateTime futureTime = startDate.AddHours(3);       // 3 hours later
+
+// Time difference
+TimeSpan difference = futureDate - startDate;
+Console.WriteLine(difference.Days);       // 7
+Console.WriteLine(difference.TotalHours);  // 168
+```
+
+### Formatting DateTime
+
+```csharp
+DateTime now = DateTime.Now;
+
+// Various formats
+Console.WriteLine(now.ToString("yyyy-MM-dd"));           // 2026-06-15
+Console.WriteLine(now.ToString("MM/dd/yyyy"));           // 06/15/2026
+Console.WriteLine(now.ToString("dddd, MMMM dd, yyyy"));  // Monday, June 15, 2026
+Console.WriteLine(now.ToString("hh:mm:ss tt"));          // 02:30:45 PM
+Console.WriteLine(now.ToString("HH:mm:ss"));             // 14:30:45
+```
+
+---
+
+## 17. File I/O (Read & Write Files)
+
+### Writing to Files
 
 ```csharp
 using System.IO;
 
-// ======= MENULIS FILE =======
+// Write text to file (overwrites if exists)
+File.WriteAllText("data.txt", "Hello, World!");
 
-// Menulis teks ke file (membuat baru atau overwrite)
-string content = "Player Name: Faris\nLevel: 10\nScore: 1000";
-File.WriteAllText("savegame.txt", content);
+// Append text to file
+File.AppendAllText("data.txt", "\nLine 2\nLine 3");
 
-// Menambah teks ke file
-File.AppendAllText("savegame.txt", $"\nPlay Time: {DateTime.Now}");
+// Write multiple lines
+string[] lines = { "Line 1", "Line 2", "Line 3" };
+File.WriteAllLines("data.txt", lines);
 
-// Menulis array baris
-string[] lines = { "=== Save Game ===", "Health: 100", "Mana: 50", "Gold: 500" };
-File.WriteAllLines("savegame2.txt", lines);
+// Writing with stream
+using (StreamWriter writer = new StreamWriter("data.txt"))
+{
+    writer.WriteLine("First line");
+    writer.WriteLine("Second line");
+    writer.WriteLine("Third line");
+}
+```
 
-// ======= MEMBACA FILE =======
+### Reading from Files
 
-// Baca semua teks
-string allText = File.ReadAllText("savegame.txt");
-Console.WriteLine(allText);
+```csharp
+using System.IO;
 
-// Baca per baris
-string[] allLines = File.ReadAllLines("savegame.txt");
-foreach (string line in allLines)
+// Read all text
+string content = File.ReadAllText("data.txt");
+Console.WriteLine(content);
+
+// Read all lines
+string[] lines = File.ReadAllLines("data.txt");
+foreach (string line in lines)
 {
     Console.WriteLine(line);
 }
 
-// Baca dengan StreamReader (lebih efisien untuk file besar)
-using (StreamReader reader = new StreamReader("savegame.txt"))
+// Read with stream
+using (StreamReader reader = new StreamReader("data.txt"))
 {
     string line;
     while ((line = reader.ReadLine()) != null)
@@ -1273,262 +1836,248 @@ using (StreamReader reader = new StreamReader("savegame.txt"))
         Console.WriteLine(line);
     }
 }
+```
 
-// ======= CEK FILE =======
+### Checking File Existence
 
-if (File.Exists("savegame.txt"))
+```csharp
+string filePath = "data.txt";
+
+if (File.Exists(filePath))
 {
-    Console.WriteLine("File ditemukan!");
-    File.Delete("savegame.txt");  // hapus file
+    Console.WriteLine("File exists!");
+    string content = File.ReadAllText(filePath);
 }
 else
 {
-    Console.WriteLine("File tidak ditemukan!");
-}
-
-// ======= UNTUK GAME =======
-
-public class SaveGame
-{
-    public string PlayerName { get; set; }
-    public int Level { get; set; }
-    public int Health { get; set; }
-    public int Score { get; set; }
-    
-    public void Save(string filename)
-    {
-        string content = $"{PlayerName}|{Level}|{Health}|{Score}";
-        File.WriteAllText(filename, content);
-    }
-    
-    public void Load(string filename)
-    {
-        if (File.Exists(filename))
-        {
-            string content = File.ReadAllText(filename);
-            string[] parts = content.Split('|');
-            PlayerName = parts[0];
-            Level = int.Parse(parts[1]);
-            Health = int.Parse(parts[2]);
-            Score = int.Parse(parts[3]);
-        }
-    }
+    Console.WriteLine("File does not exist!");
 }
 ```
 
----
-
-18. Koneksi Database SQL Server
-
-Dasar Koneksi
+### Working with Directories
 
 ```csharp
-using System.Data;
-using System.Data.SqlClient;
-
-// Connection string
-string connectionString = "Data Source=localhost;Initial Catalog=nama_database;Integrated Security=True";
-
-// Atau dengan username password
-string connString = "Server=localhost;Database=hotelnew;User Id=sa;Password=12345;";
-
-// ======= SELECT (Membaca Data) =======
-public void LoadPlayers()
+// Create directory
+if (!Directory.Exists("MyFolder"))
 {
-    string query = "SELECT * FROM players";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        
-        try
-        {
-            conn.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            
-            while (reader.Read())
-            {
-                int id = reader.GetInt32(0);
-                string name = reader.GetString(1);
-                int level = reader.GetInt32(2);
-                
-                Console.WriteLine($"ID: {id}, Name: {name}, Level: {level}");
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error: " + ex.Message);
-        }
-    }
+    Directory.CreateDirectory("MyFolder");
 }
 
-// ======= SELECT dengan Parameter (Cegah SQL Injection) =======
-public Player GetPlayerById(int playerId)
+// List files in directory
+string[] files = Directory.GetFiles("MyFolder");
+foreach (string file in files)
 {
-    string query = "SELECT * FROM players WHERE id = @id";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        cmd.Parameters.AddWithValue("@id", playerId);
-        
-        conn.Open();
-        SqlDataReader reader = cmd.ExecuteReader();
-        
-        if (reader.Read())
-        {
-            Player player = new Player();
-            player.Id = reader.GetInt32(0);
-            player.Name = reader.GetString(1);
-            player.Level = reader.GetInt32(2);
-            return player;
-        }
-    }
-    return null;
+    Console.WriteLine(file);
 }
 
-// ======= INSERT (Menambah Data) =======
-public bool InsertPlayer(string name, int level)
+// Delete file
+if (File.Exists("oldfile.txt"))
 {
-    string query = "INSERT INTO players (name, level) VALUES (@name, @level)";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        cmd.Parameters.AddWithValue("@name", name);
-        cmd.Parameters.AddWithValue("@level", level);
-        
-        try
-        {
-            conn.Open();
-            int rowsAffected = cmd.ExecuteNonQuery();
-            return rowsAffected > 0;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error: " + ex.Message);
-            return false;
-        }
-    }
+    File.Delete("oldfile.txt");
 }
 
-// ======= UPDATE (Mengedit Data) =======
-public bool UpdatePlayerLevel(int playerId, int newLevel)
+// Delete directory
+if (Directory.Exists("MyFolder"))
 {
-    string query = "UPDATE players SET level = @level WHERE id = @id";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        cmd.Parameters.AddWithValue("@level", newLevel);
-        cmd.Parameters.AddWithValue("@id", playerId);
-        
-        conn.Open();
-        int rowsAffected = cmd.ExecuteNonQuery();
-        return rowsAffected > 0;
-    }
-}
-
-// ======= DELETE (Menghapus Data) =======
-public bool DeletePlayer(int playerId)
-{
-    string query = "DELETE FROM players WHERE id = @id";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        cmd.Parameters.AddWithValue("@id", playerId);
-        
-        conn.Open();
-        int rowsAffected = cmd.ExecuteNonQuery();
-        return rowsAffected > 0;
-    }
-}
-
-// ======= LOGIN / CEK USERNAME PASSWORD =======
-public bool Login(string username, string password)
-{
-    string query = "SELECT * FROM users WHERE username = @username AND password = @password";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlCommand cmd = new SqlCommand(query, conn);
-        cmd.Parameters.AddWithValue("@username", username);
-        cmd.Parameters.AddWithValue("@password", password);
-        
-        conn.Open();
-        SqlDataReader reader = cmd.ExecuteReader();
-        
-        // IF (dr.HasRows) - pintu gerbang login
-        if (reader.HasRows)
-        {
-            return true;  // Login berhasil
-        }
-        else
-        {
-            return false; // Login gagal
-        }
-    }
-}
-
-// ======= MENAMPILKAN DATA KE DataGridView =======
-public void LoadDataToGridView(DataGridView dgv)
-{
-    string query = "SELECT * FROM players";
-    
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-        DataTable dataTable = new DataTable();
-        
-        try
-        {
-            conn.Open();
-            adapter.Fill(dataTable);
-            dgv.DataSource = dataTable;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error: " + ex.Message);
-        }
-    }
+    Directory.Delete("MyFolder", true);  // true = recursive
 }
 ```
 
 ---
 
-19. Ringkasan Cepat
+## 18. SQL Server Database Connection
 
-Tipe Data Paling Sering Dipakai
+### Connection String
 
-Keyword Contoh Kapan Pakai
-int int level = 5; Angka bulat (level, score, id)
-string string name = "Faris"; Teks (nama, deskripsi)
-bool bool isAlive = true; Kondisi true/false
-float float speed = 5.5f; Angka desimal (kecepatan)
-List<T> List<string> items; Kumpulan data dinamis
-Dictionary<K,V> Dictionary<string,int> Data pairing key-value
+```csharp
+using System.Data.SqlClient;
 
-Method Paling Sering Dipakai
+string connectionString = "Server=localhost;Database=GameDB;User Id=sa;Password=YourPassword;";
+// or
+string connectionString = "Data Source=localhost;Initial Catalog=GameDB;Integrated Security=true;";
+```
 
-Method Fungsi
-Convert.ToInt32() String → int
-ToString() Angka → string
-int.Parse() String → int (bisa error)
-int.TryParse() String → int (aman)
-MessageBox.Show() Tampil pesan di Windows Forms
-Console.WriteLine() Tampil di console
+### Basic Database Operations
 
-Koneksi Database Paling Sering
+```csharp
+using System.Data.SqlClient;
 
-Method Fungsi
-SqlConnection Koneksi ke database
-SqlCommand Menjalankan query
-SqlDataReader Membaca hasil SELECT
-ExecuteNonQuery() Untuk INSERT/UPDATE/DELETE
-ExecuteReader() Untuk SELECT
-Parameters.AddWithValue() Parameter query (cegah SQL Injection)
+public class DatabaseManager
+{
+    private string connectionString = "Server=localhost;Database=GameDB;User Id=sa;Password=YourPassword;";
+    
+    // INSERT
+    public void InsertPlayer(string name, int level)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "INSERT INTO Players (Name, Level) VALUES (@name, @level)";
+            
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@level", level);
+                
+                connection.Open();
+                command.ExecuteNonQuery();
+                Console.WriteLine("Player inserted!");
+            }
+        }
+    }
+    
+    // SELECT (Read)
+    public void GetPlayers()
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "SELECT * FROM Players";
+            
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    string name = reader["Name"].ToString();
+                    int level = (int)reader["Level"];
+                    Console.WriteLine($"{name} - Level {level}");
+                }
+            }
+        }
+    }
+    
+    // UPDATE
+    public void UpdatePlayerLevel(int playerId, int newLevel)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "UPDATE Players SET Level = @level WHERE Id = @id";
+            
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@level", newLevel);
+                command.Parameters.AddWithValue("@id", playerId);
+                
+                connection.Open();
+                command.ExecuteNonQuery();
+                Console.WriteLine("Player level updated!");
+            }
+        }
+    }
+    
+    // DELETE
+    public void DeletePlayer(int playerId)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "DELETE FROM Players WHERE Id = @id";
+            
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@id", playerId);
+                
+                connection.Open();
+                command.ExecuteNonQuery();
+                Console.WriteLine("Player deleted!");
+            }
+        }
+    }
+}
+```
+
+### Usage Example
+
+```csharp
+DatabaseManager dbManager = new DatabaseManager();
+
+// Insert
+dbManager.InsertPlayer("Faris", 10);
+dbManager.InsertPlayer("Komi", 8);
+
+// Read
+dbManager.GetPlayers();
+
+// Update
+dbManager.UpdatePlayerLevel(1, 15);
+
+// Delete
+dbManager.DeletePlayer(2);
+```
 
 ---
 
-Dokumentasi lengkap syntax C# untuk keperluan LKS Game Faris.
+## 19. Quick Reference Summary
+
+### Essential Keywords
+
+| Keyword | Purpose |
+|---------|---------|
+| `using` | Import namespace or manage resources |
+| `class` | Define a class |
+| `public` | Accessible from anywhere |
+| `private` | Only accessible within the class |
+| `static` | Belongs to class, not instance |
+| `void` | Method returns nothing |
+| `return` | Return value from method |
+| `new` | Create new object instance |
+| `if / else` | Conditional execution |
+| `switch / case` | Multiple conditions |
+| `for / while / foreach` | Looping |
+| `break / continue` | Control loop flow |
+| `try / catch / finally` | Exception handling |
+| `throw` | Throw exception |
+
+### Common Namespaces
+
+```csharp
+using System;                       // Basic types and functions
+using System.Collections.Generic;   // List, Dictionary, etc.
+using System.Text;                  // String builder
+using System.IO;                    // File operations
+using System.Data.SqlClient;        // SQL Server
+using System.Linq;                  // LINQ queries
+```
+
+### Quick Comparison Table
+
+| Task | Code | Example |
+|------|------|---------|
+| Input | `Console.ReadLine()` | `string name = Console.ReadLine();` |
+| Output | `Console.WriteLine()` | `Console.WriteLine("Hello");` |
+| Create List | `new List<T>()` | `List<int> scores = new List<int>();` |
+| Create Dictionary | `new Dictionary<K,V>()` | `Dictionary<string, int> stats = new Dictionary<string, int>();` |
+| Loop Array | `foreach` | `foreach (int num in numbers)` |
+| Try-Catch | `try { } catch` | `try { ... } catch (Exception ex)` |
+| Random | `new Random()` | `Random rnd = new Random();` |
+| File Read | `File.ReadAllText()` | `File.ReadAllText("file.txt");` |
+| File Write | `File.WriteAllText()` | `File.WriteAllText("file.txt", content);` |
+
+---
+
+## 📚 Quick Tips for LKS Competition
+
+1. **Always use try-catch** when dealing with user input
+2. **Use meaningful variable names** (not a, b, c)
+3. **Comment your code** for clarity
+4. **Validate input** before processing
+5. **Use List instead of Array** when size is dynamic
+6. **Use Dictionary** for key-value pair lookups
+7. **Break code into methods** for reusability
+8. **Handle exceptions** gracefully
+9. **Use appropriate data types** (int for whole numbers, double for decimals)
+10. **Test edge cases** (empty input, null, zero, negative numbers)
+
+---
+
+**Last Updated:** June 2026
+
+**Created by:** Faris
+
+**Purpose:** LKS Competition Preparation & C# Reference Guide
+
+**Status:** 📚 Complete & Ready for Competition
+
+---
+
+> Remember: **Practice makes perfect!** Keep coding and testing these examples. Good luck with your competition! 🚀
